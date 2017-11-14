@@ -7,6 +7,7 @@ public class Test {
 		System.out.println("ceshi");
 		System.out.println(12345);
 		System.out.println(1234567);
+		System.out.println("123456789");
 	}
 
 }
