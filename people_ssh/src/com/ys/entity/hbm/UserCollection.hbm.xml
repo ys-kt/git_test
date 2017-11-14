@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="com.ys.entity">
+	<!-- 配置类和表 -->
+	<class name="UserCollection" table="user_collection">
+		<!-- 配置主键 -->
+		<id name="collectionId" column="collection_id">
+			<!-- 配置主键生成策略 -->
+			<generator class="native"></generator>
+		</id>
+		
+		<!-- 配置其他普通属性 -->
+		<property name="articlesId" column="articles_id"></property>
+		<property name="userId" column="user_id"></property>
+		<property name="collectionTime" column="collection_time"></property>
+	</class>
+</hibernate-mapping>

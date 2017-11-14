@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="com.ys.entity">
+	<!-- 配置类和表 -->
+	<class name="UserInfo" table="user_info">
+		<!-- 配置主键 -->
+		<id name="userId" column="user_id">
+			<!-- 配置主键生成策略 -->
+			<generator class="native"></generator>
+		</id>
+		
+		<!-- 配置其他普通属性 -->
+		<property name="userName" column="user_name"></property>
+		<property name="userPwd" column="user_pwd"></property>
+		<property name="userBirthday" column="user_birthday"></property>
+		<property name="userPhone" column="user_phone"></property>
+		<property name="userEmail" column="user_email"></property>
+		<property name="userGender" column="user_gender"></property>
+		<property name="headPicPath" column="head_pic_path"></property>
+		
+		<!-- 配置ArticlesInfo多对多 -->
+		<!-- set集合：
+				name	在本实体类中的属性名
+				table	中间表名
+		 -->
+		<set name="articlesInfos" table="user_collection">
+			<!-- 
+				本实体类在中间表的外键
+			 -->
+			<key column="userId"></key>
+			<!-- 
+				class	set泛型的实体
+				column	class里中间表的外键
+			 -->
+			<many-to-many class="ArticlesInfo" column="articlesId"></many-to-many>
+		</set>
+		
+	</class>
+</hibernate-mapping>

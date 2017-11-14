@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="com.ys.entity">
+	<!-- 配置类和表 -->
+	<class name="ArticlesType" table="articles_type">
+		<!-- 配置主键 -->
+		<id name="articlesTypeId" column="articles_type_id">
+			<!-- 配置主键生成策略 -->
+			<generator class="native"></generator>
+		</id>
+		
+		<!-- 配置其他普通属性 -->
+		<property name="typeParentId" column="type_parent_id"></property>
+		<property name="articlesTypeName" column="articles_type_name"></property>
+		<property name="brandId" column="brand_id"></property>
+	</class>
+</hibernate-mapping>

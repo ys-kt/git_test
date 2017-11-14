@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="com.ys.entity">
+	<!-- 配置类和表 -->
+	<class name="ArticlesInfo" table="articles_info">
+		<!-- 配置主键 -->
+		<id name="articlesId" column="articles_id">
+			<!-- 配置主键生成策略 -->
+			<generator class="native"></generator>
+		</id>
+		
+		<!-- 配置其他普通属性 -->
+		<property name="articlesName" column="articles_name"></property>
+		<property name="articlesType2Id" column="articles_type2_id"></property>
+		<property name="articlesPrice" column="articles_price"></property>
+		<property name="articlesNewOld" column="articles_new_old"></property>
+		<property name="userId" column="user_id"></property>
+		<property name="articlesIdentity" column="articles_identity"></property>
+		<property name="articlesDetails" column="articles_details"></property>
+		<property name="articlesTime" column="articles_time"></property>
+		<property name="areaId" column="area_id"></property>
+		<property name="articlesOldPrice" column="articles_old_price"></property>
+	</class>
+</hibernate-mapping>
