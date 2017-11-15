@@ -58,7 +58,7 @@
 					<li class="tab-title-item"><a href="#resume" data-toggle="tab"
 						data-target="#resume"><i class="icon-qiuzhi"></i>&nbsp;求职</a></li>
 				</ul>
-				<div class="tab-content">
+				<!-- <div class="tab-content">
 					<div id="ershou" class="tab-content-pane clearfix active">
 						<div class="category-group clearfix">
 							<a href="#">闲置真心送</a><a href="#">二手手机</a><a href="#">台式电脑</a><a
@@ -71,6 +71,6 @@
 								href="#">网游/虚拟物品</a><a href="#">其他物品</a>
 						</div>
 					</div>
-				</div>
+				</div> -->
 </body>
 </html>
