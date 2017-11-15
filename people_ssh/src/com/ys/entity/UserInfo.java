@@ -26,6 +26,12 @@ public class UserInfo {
 	
 	private Set<ArticlesInfo> articlesInfos = new HashSet<ArticlesInfo>();
 	
+	public Set<ArticlesInfo> getArticlesInfos() {
+		return articlesInfos;
+	}
+	public void setArticlesInfos(Set<ArticlesInfo> articlesInfos) {
+		this.articlesInfos = articlesInfos;
+	}
 	public Long getUserId() {
 		return userId;
 	}

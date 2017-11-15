@@ -2,6 +2,10 @@
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "struts-2.3.dtd" >
 <struts>
 	<package name="default" namespace="/" extends="struts-default">
+	
+		<!-- 刘勇	s -->
+		
+		<!-- 刘勇	e -->
 		
 	</package>
 </struts>
