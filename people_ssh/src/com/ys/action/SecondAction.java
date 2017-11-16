@@ -25,6 +25,40 @@ public class SecondAction extends ActionSupport{
 	private ArticlesTypeDao articlesTypeDao;
 	
 	private Integer brand;
+	private Integer pageIndex;
+	private Integer articlesType;
+	private String City;
+	
+
+
+	public Integer getPageIndex() {
+		return pageIndex;
+	}
+
+
+	public void setPageIndex(Integer pageIndex) {
+		this.pageIndex = pageIndex;
+	}
+
+
+	public Integer getArticlesType() {
+		return articlesType;
+	}
+
+
+	public void setArticlesType(Integer articlesType) {
+		this.articlesType = articlesType;
+	}
+
+
+	public String getCity() {
+		return City;
+	}
+
+
+	public void setCity(String city) {
+		City = city;
+	}
 
 
 	public Integer getBrand() {
@@ -38,7 +72,19 @@ public class SecondAction extends ActionSupport{
 
 
 	public String Second(){
-		System.err.println(brand);
+		//先进行判断，并进行相应的操作
+		if(City=="0"){
+			City=null;
+		}
+		if(articlesType==0){
+			articlesType=null;
+		}
+		if(pageIndex==null){
+			pageIndex=1;
+		}
+		if(brand==null){
+			brand=0;
+		}
 		List<Brand> brandlist = brandService.findByAll();
 		List<ProCityArea> guangZhouList = proCityAreaService.findCityByGuangZhou();
 		//保存到request域里
@@ -49,6 +95,9 @@ public class SecondAction extends ActionSupport{
 			List<ArticlesType> articlesTypeList = articlesTypeDao.findByBrand(brand);
 			map.put("articlesTypeList", articlesTypeList);
 		}
+		map.put("pageIndex", pageIndex);
+		map.put("articlesType", articlesType);
+		map.put("City", City);
 		map.put("brand", brand);
 		map.put("brandlist", brandlist);
 		map.put("guangZhouList", guangZhouList);
