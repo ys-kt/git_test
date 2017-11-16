@@ -72,6 +72,7 @@ public class SecondAction extends ActionSupport{
 
 
 	public String Second(){
+		System.err.println("品牌id"+brand);
 		//先进行判断，并进行相应的操作
 		if(City=="0"){
 			City=null;
