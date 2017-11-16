@@ -2,11 +2,22 @@
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "struts-2.3.dtd" >
 <struts>
 	<package name="default" namespace="/" extends="struts-default">
-	
-	<!-- 包子s -->
-	<action name="index" class="com.ys.action.SecondAction" method="Second">
-	<result name="success">jsp/second_hand_market.jsp</result>
-	</action>
-	<!-- 包子e 测试  旺旺  鹏鹏-->
+
+		<!-- 刘勇 s -->
+		<action name="articlesDetail" class="com.ys.action.DetailsAction"
+			method="findByArticlesInfoId">
+			<result name="success">/jsp/details.jsp</result>
+		</action>
+
+		<!-- 刘勇 e -->
+		
+		
+		
+
+		<!-- 包子s -->
+		<action name="index" class="com.ys.action.SecondAction" method="Second">
+			<result name="success">jsp/second_hand_market.jsp</result>
+		</action>
+		<!-- 包子e 测试 旺旺 鹏鹏 -->
 	</package>
 </struts>
