@@ -113,7 +113,7 @@
 				<ul id="user-meta">
 					<li title="" data-toggle="tooltip" data-placement="bottom"
 						data-original-title="手机号码"><i class="icon-mobile">13542285917</i>
-						<a href="http://www.baixing.com/oz/bind" target="_top">修改</a></li>
+						</li>
 					<li title="" data-toggle="tooltip" data-placement="bottom"
 						data-original-title="用户编号"><i>#218821183 </i></li>
 				</ul>
@@ -193,7 +193,7 @@
 			
 			<ul class="tab-title clearfix">
 				<li class="tab-title-item active"><span id="manageAnchor"></span>
-					<a href="http://www.baixing.com/w/posts/myPosts">我的发布</a></li>
+					<a href="">我的发布</a></li>
 			</ul>
 			<ul class="tab-subtitle">
 				<li class="tab-title-item active"><a
