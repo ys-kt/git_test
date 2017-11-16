@@ -19,13 +19,16 @@ public class ArticlesInfoDao {
 	@Resource
 	private SessionFactory sessionFactory;
 	
+	//每页大小
+	private Integer pageSize=5;
+	
 	//获取session
 	private Session getSession(){
 		return sessionFactory.openSession();
 	}
 	
 	//按品牌和城市分页查询分页查询
-	public List<ArticlesInfo> findByBrandAndCity(String articlesType2Id,String areaId){
+	public List<ArticlesInfo> findByBrandAndCity(Integer pageIndex,Long articlesType2Id,Integer areaId){
 		Session session = getSession();
 		Criteria criteria = session.createCriteria(ArticlesInfo.class);
 		if(articlesType2Id!=null&& !articlesType2Id.equals("")){
@@ -34,6 +37,8 @@ public class ArticlesInfoDao {
 		if(areaId!=null&& !areaId.equals("")){
 			criteria.add(Restrictions.eq("areaId", areaId));
 		}
+		criteria.setFetchSize((pageSize-1)*pageSize);
+		criteria.setMaxResults(pageSize);
 		List<ArticlesInfo> list = criteria.list();
 		return list;
 	}

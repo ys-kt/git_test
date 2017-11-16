@@ -9,9 +9,12 @@ import javax.annotation.Resource;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.ys.dao.ArticlesTypeDao;
+import com.ys.entity.ArticlesInfo;
 import com.ys.entity.ArticlesType;
 import com.ys.entity.Brand;
 import com.ys.entity.ProCityArea;
+import com.ys.service.ArticlesInfoService;
+import com.ys.service.ArticlesTypeService;
 import com.ys.service.BrandService;
 import com.ys.service.ProCityAreaService;
 
@@ -22,11 +25,14 @@ public class SecondAction extends ActionSupport{
 	@Resource
 	private ProCityAreaService proCityAreaService;
 	@Resource
-	private ArticlesTypeDao articlesTypeDao;
+	private ArticlesTypeService articlesTypeService;
+	@Resource
+	private ArticlesInfoService articlesInfoService;
 	
 	private Integer brand;
 	private Integer pageIndex;
 	private Integer articlesType;
+	private Long articlesType2Id;
 	private String City;
 	
 
@@ -72,7 +78,6 @@ public class SecondAction extends ActionSupport{
 
 
 	public String Second(){
-		System.err.println("品牌id"+brand);
 		//先进行判断，并进行相应的操作
 		if(City=="0"){
 			City=null;
@@ -83,18 +88,26 @@ public class SecondAction extends ActionSupport{
 		if(pageIndex==null||pageIndex==0){
 			pageIndex=1;
 		}
-		if(brand==null){
-			brand=0;
+		if(brand==null||brand==0){
+			brand=null;
 		}
+		if(articlesType!=null){
+			articlesType2Id=Long.parseLong(articlesType.toString());
+		}else{
+			articlesType2Id=null;
+		}
+		
 		List<Brand> brandlist = brandService.findByAll();
 		List<ProCityArea> guangZhouList = proCityAreaService.findCityByGuangZhou();
+		List<ArticlesInfo> articlesInfoList = articlesInfoService.findByBrandAndCity(pageIndex, articlesType2Id, brand);
 		//保存到request域里
 		ActionContext context = ActionContext.getContext();
 		Map<String,Object> map = (Map<String, Object>) context.get("request");
 		if(brand!=null){
-			List<ArticlesType> articlesTypeList = articlesTypeDao.findByBrand(brand);
+			List<ArticlesType> articlesTypeList = articlesTypeService.findByBrand(brand);
 			map.put("articlesTypeList", articlesTypeList);
 		}
+		map.put("articlesInfoList", articlesInfoList);
 		map.put("pageIndex", pageIndex);
 		map.put("articlesType", articlesType);
 		map.put("City", City);

@@ -45,8 +45,7 @@ public class Test {
 	
 	@org.junit.Test
 	public void test01() {
-		List<ArticlesInfo> list = articlesInfoDao.findByBrandAndCity(null, null);
-		System.err.println(list.toString());
+		
 	}
 
 }

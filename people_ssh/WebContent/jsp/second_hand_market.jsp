@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <%-- ctx --> pageContext.request.contextPath --%>
@@ -15,7 +16,9 @@
 <link rel="apple-touch-icon-precomposed"
 	href="http://s.baixing.net/img/wap/icon_bx_app_1308.png">
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-<link media="all" href="${ctx }/statics/css/second_hand_market.css" type="text/css" rel="stylesheet">
+<script src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
+<link media="all" href="${ctx }/statics/css/second_hand_market.css"
+	type="text/css" rel="stylesheet">
 </head>
 <body class="category-ershou view-waterfall">
 	<div id="BAIDU_fp_wrapper"
@@ -59,7 +62,7 @@
 						</div>
 					</div>
 				</div>
-				
+
 			</div>
 			<ul id="user-tools" class="navbar-nav">
 				<li><a href="http://www.baixing.com/oz/verify/reg"
@@ -69,7 +72,7 @@
 				<li class="dropdown"><a
 					href="http://www.baixing.com/a/pro/?src=topmenu" target="_top">商户推广<i
 						class="icon-arrow-down"></i></a>
-				<ul class="dropdown-menu">
+					<ul class="dropdown-menu">
 						<li><a href="http://www.baixing.com/ra/pay/?src=topmenu"
 							target="_top">付费推广</a></li>
 						<li><a href="http://vip.baixing.com/job_buy?src=topmenu"
@@ -85,7 +88,7 @@
 					</ul></li>
 				<li class="dropdown"><a href="javascript:;">合作及工具<i
 						class="icon-arrow-down"></i></a>
-				<ul class="dropdown-menu">
+					<ul class="dropdown-menu">
 						<li><a href="http://www.baixing.com/a/bdad/?src=home_topbar"
 							target="_top">品牌网络推广</a></li>
 						<li><a href="https://api3.baixing.com.cn/?src=home_topbar"
@@ -104,8 +107,9 @@
 		<div class="location">
 			<span class="breadcrumb"><a
 				href="http://guangzhou.baixing.com/" property="v:title" rel="v:url"
-				class="primary-logo"><img alt="百姓网" src="${ctx }/statics/images/logo_baixing.png"
-					width="95px" height="48px"></a></span>
+				class="primary-logo"><img alt="百姓网"
+					src="${ctx }/statics/images/logo_baixing.png" width="95px"
+					height="48px"></a></span>
 			<div class="head-search">
 				<form action="http://guangzhou.baixing.com/search/" class="search">
 					<input onfocus="this.select();return false;"
@@ -116,7 +120,7 @@
 					<button type="submit" title="搜索"
 						class="frontpage-search-trigger search-trigger">搜索</button>
 				</form>
-				
+
 			</div>
 			<a href="" class="post">免费发布二手信息</a>
 		</div>
@@ -141,29 +145,9 @@
 					<span>二手</span><i class="icon-arrow-down"></i>
 				</legend>
 				<ul class="dropdown-menu">
+
 					<li><a href="http://guangzhou.baixing.com/zengsong/">闲置真心送</a></li>
-					<li><a href="http://guangzhou.baixing.com/shouji/">二手手机</a></li>
-					<li><a href="http://guangzhou.baixing.com/diannao/">台式电脑</a></li>
-					<li><a href="http://guangzhou.baixing.com/bijiben/">笔记本</a></li>
-					<li><a href="http://guangzhou.baixing.com/pingbandiannao/">平板电脑</a></li>
-					<li><a href="http://guangzhou.baixing.com/shumachanpin/">数码产品</a></li>
-					<li><a href="http://guangzhou.baixing.com/yinger/">母婴用品</a></li>
-					<li><a href="http://guangzhou.baixing.com/dianqi/">家用电器</a></li>
-					<li><a href="http://guangzhou.baixing.com/jiaju/">二手家具</a></li>
-					<li><a href="http://guangzhou.baixing.com/fushi/">服饰箱包</a></li>
-					<li><a href="http://guangzhou.baixing.com/menpiao/">门票卡券</a></li>
-					<li><a href="http://guangzhou.baixing.com/zhaoxiangji/">照相机</a></li>
-					<li><a href="http://guangzhou.baixing.com/shoujipeijian/">手机配件</a></li>
-					<li><a href="http://guangzhou.baixing.com/riyongpin/">家居日用</a></li>
-					<li><a href="http://guangzhou.baixing.com/yundongqicai/">乐器/运动</a></li>
-					<li><a href="http://guangzhou.baixing.com/nongchanpin/">食品农产</a></li>
-					<li><a href="http://guangzhou.baixing.com/yueqi/">图书音像</a></li>
-					<li><a href="http://guangzhou.baixing.com/bangongyongpin/">办公用品</a></li>
-					<li><a href="http://guangzhou.baixing.com/bangongjiaju/">办公家具</a></li>
-					<li><a href="http://guangzhou.baixing.com/shoucang/">工艺收藏</a></li>
-					<li><a href="http://guangzhou.baixing.com/qishipenjing/">奇石盆景</a></li>
-					<li><a href="http://guangzhou.baixing.com/xuniwupin/">网游/虚拟物品</a></li>
-					<li><a href="http://guangzhou.baixing.com/qitazhuanrang/">其他物品</a></li>
+
 				</ul>
 			</fieldset>
 			<i class="sep"></i>
@@ -177,7 +161,8 @@
 	</div>
 	<div class="listing-fixed-bottom-promo" style="display: none;">
 		<div class="qrcode-container">
-			<img src="${ctx }/statics/images/8d6da822701302767b808ca975cde170.png"><a
+			<img
+				src="${ctx }/statics/images/8d6da822701302767b808ca975cde170.png"><a
 				href="javascript:;" class="close pull-right">×</a>
 		</div>
 	</div>
@@ -186,61 +171,44 @@
 		action="http://guangzhou.baixing.com/ershou/?src=topbar"
 		class="compact ">
 		<fieldset class="expanded">
-			<span class="legend">二手</span>
+			<span class="legend">品牌</span>
 			<div class="links" style="height: auto;">
-				<a href="http://guangzhou.baixing.com/zengsong/">闲置真心送</a><a
-					href="http://guangzhou.baixing.com/shouji/">二手手机</a><a
-					href="http://guangzhou.baixing.com/diannao/">台式电脑</a><a
-					href="http://guangzhou.baixing.com/bijiben/">笔记本</a><a
-					href="http://guangzhou.baixing.com/pingbandiannao/">平板电脑</a><a
-					href="http://guangzhou.baixing.com/shumachanpin/">数码产品</a><a
-					href="http://guangzhou.baixing.com/yinger/">母婴用品</a><a
-					href="http://guangzhou.baixing.com/dianqi/">家用电器</a><a
-					href="http://guangzhou.baixing.com/jiaju/">二手家具</a><a
-					href="http://guangzhou.baixing.com/fushi/">服饰箱包</a><a
-					href="http://guangzhou.baixing.com/menpiao/">门票卡券</a><a
-					href="http://guangzhou.baixing.com/zhaoxiangji/">照相机</a><a
-					href="http://guangzhou.baixing.com/shoujipeijian/">手机配件</a><a
-					href="http://guangzhou.baixing.com/riyongpin/">家居日用</a><a
-					href="http://guangzhou.baixing.com/yundongqicai/">乐器/运动</a><a
-					href="http://guangzhou.baixing.com/nongchanpin/">食品农产</a><a
-					href="http://guangzhou.baixing.com/yueqi/">图书音像</a><a
-					href="http://guangzhou.baixing.com/bangongyongpin/">办公用品</a><a
-					href="http://guangzhou.baixing.com/bangongjiaju/">办公家具</a><a
-					href="http://guangzhou.baixing.com/shoucang/">工艺收藏</a><a
-					href="http://guangzhou.baixing.com/qishipenjing/">奇石盆景</a><a
-					href="http://guangzhou.baixing.com/xuniwupin/">网游/虚拟物品</a><a
-					href="http://guangzhou.baixing.com/qitazhuanrang/">其他物品</a>
+				<a href="index"
+					<s:property value="#request.brand==0?'class=checked':''"/>>全部</a>
+				<s:iterator value="#request.brandlist">
+					<a href="javascript:toIndexBybrand(<s:property value="brandId"/>)"
+						<s:property value="brandId==#request.brand?'class=checked':''"/>><s:property
+							value="brandName" /></a>
+				</s:iterator>
 			</div>
 		</fieldset>
+		<s:if test="#request.articlesTypeList!=null&&#request.brand!=0">
+			<fieldset class="expanded">
+				<span class="legend">类别</span>
+				<div class="area links" style="height: 26px;">
+					<a href="javascript:toIndexByarticlesType(0)"
+						<s:property value="#request.articlesType==null||#request.articlesType==0?'class=checked':''"/>>全部</a>
+					<s:iterator value="#request.articlesTypeList">
+						<a
+							href="javascript:toIndexByarticlesType(<s:property value="articlesTypeId" />)"
+							<s:property value="articlesTypeId==#request.articlesType?'class=checked':''"/>><s:property
+								value="articlesTypeName" /></a>
+					</s:iterator>
+				</div>
+			</fieldset>
+		</s:if>
+
 		<fieldset class="expanded">
 			<span class="legend">地区</span>
 			<div class="area links" style="height: 26px;">
-				<a class="checked">全广州</a><a
-					href="http://guangzhou.baixing.com/ershou/m7269/">番禺</a><a
-					href="http://guangzhou.baixing.com/ershou/m7275/">天河</a><a
-					href="http://guangzhou.baixing.com/ershou/m7271/">白云</a><a
-					href="http://guangzhou.baixing.com/ershou/m7274/">海珠</a><a
-					href="http://guangzhou.baixing.com/ershou/m7276/">越秀</a><a
-					href="http://guangzhou.baixing.com/ershou/m7268/">花都</a><a
-					href="http://guangzhou.baixing.com/ershou/m7277/">荔湾</a><a
-					href="http://guangzhou.baixing.com/ershou/m7266/">南沙</a><a
-					href="http://guangzhou.baixing.com/ershou/m7270/">增城</a><a
-					href="http://guangzhou.baixing.com/ershou/m7273/">黄埔</a><a
-					href="http://guangzhou.baixing.com/ershou/m7265/">萝岗</a><a
-					href="http://guangzhou.baixing.com/ershou/m7272/">从化</a><a
-					href="http://guangzhou.baixing.com/ershou/m180853/">广州周边</a><a
-					href="http://guangdong.baixing.com/ershou/">全广东</a><a
-					href="http://china.baixing.com/ershou/">全中国</a>
+				<a href="javascript:toIndexByCity(0)"
+					<s:property value="#request.City==null||#request.City==0?'class=checked':''"/>>全广州</a>
+				<s:iterator value="#request.guangZhouList">
+					<a href="javascript:toIndexByCity(<s:property value="id"/>)"
+						<s:property value="id==#request.City?'class=checked':''"/>><s:property
+							value="name" /></a>
+				</s:iterator>
 			</div>
-		</fieldset>
-		<fieldset class="search-fieldset">
-			<input name="query" placeholder="搜索名称或品牌" value=""
-				class="search-query ui-autocomplete-input" autocomplete="off"
-				type="search"><a href="javascript:void%200;"
-				class="search-trigger"><i class="icon-search"></i></a><a
-				class="more-options-folding"><span>更多筛选条件</span><i
-				class="icon-arrow-down"></i><i class="icon-minus"></i></a>
 		</fieldset>
 	</form>
 	</section>
@@ -271,7 +239,8 @@
 								<img id="app-download-section-img"
 									src="${ctx }/statics/images/95967a3f4e7e33eac4b62aa5d802b9d3.png">
 								<div id="app-download-section-qrcode">
-									<img src="${ctx }/statics/images/d111c4814bdd10412c226474d9290aca.png">
+									<img
+										src="${ctx }/statics/images/d111c4814bdd10412c226474d9290aca.png">
 								</div>
 							</div>
 							<div id="app-download-section-title">扫码下载百姓网APP，随时订阅信息，还能私信沟通！</div>
@@ -309,7 +278,9 @@
 					<div class="text-line">
 						<span class="icon-weixin"></span><span>扫码关注百姓网公众号，随时订阅信息！</span>
 					</div>
-					<img src="${ctx }/statics/images/886cdef3c3645949a974d03e76e20ca3.png" class="tip-img">
+					<img
+						src="${ctx }/statics/images/886cdef3c3645949a974d03e76e20ca3.png"
+						class="tip-img">
 				</div>
 			</div>
 		</div>
@@ -354,36 +325,40 @@
 			</div>
 			</section>
 			<div class="waterfall-glist-container">
-				<div class="waterfall-glist">
-					<div data-cpm-sign="" data-aid="1264285911" class="waterdrop ">
-						<a href="http://guangzhou.baixing.com/shouji/a1264285911.html"
-							target="_top" class="waterfall-img"><img
-							src="7eadfb404be7b7d6bc483b3f2b2186d5.jpg_pb"
-							alt="Iphone7低价卖掉黑色128g"></a><a
-							href="http://guangzhou.baixing.com/shouji/a1264285911.html"
-							target="_top" class="waterfall-title">Iphone7低价卖掉黑色128g</a>
-						<div class="waterfall-meta">
-							<span class="highlight">3390元</span><span class="meta-location">嘉禾望岗</span>
-						</div>
-						<div class="waterfall-tags"></div>
-						<div class="waterfall-user">
-							<a href="http://www.baixing.com/u/218754050/" target="_top"
-								class="img"><img
-								src="9fcf7832ade557022ecc367d95ce13ac.png_sq"
-								alt="小百姓171108166221"></a>
-							<div class="content">
-								<p class="user-name">
-									<a href="http://www.baixing.com/u/218754050/" target="_top">小百姓171108166221</a>
-								</p>
-								<p class="post-source">
-									来自：<a
-										href="http://guangzhou.baixing.com/a/mobile/?source=waterfallappicon"
-										target="_top">百姓网APP</a>
-								</p>
+
+				<s:iterator value="#request.articlesInfoList">
+					<div class="waterfall-glist">
+						<div data-cpm-sign="" data-aid="1264285911" class="waterdrop ">
+							<a href="#" target="_top" class="waterfall-img"><img
+								src="7eadfb404be7b7d6bc483b3f2b2186d5.jpg_pb"
+								alt='<s:property value="articlesName"/>'></a><a href="#"
+								target="_top" class="waterfall-title"><s:property
+									value="articlesName" /></a>
+							<div class="waterfall-meta">
+								<span class="highlight"><s:property value="articlesPrice" /></span><span
+									class="meta-location">嘉禾望岗</span>
+							</div>
+							<div class="waterfall-tags"></div>
+							<div class="waterfall-user">
+								<a href="http://www.baixing.com/u/218754050/" target="_top"
+									class="img"><img
+									src="9fcf7832ade557022ecc367d95ce13ac.png_sq"
+									alt="小百姓171108166221"></a>
+								<div class="content">
+									<p class="user-name">
+										<a href="http://www.baixing.com/u/218754050/" target="_top">小百姓171108166221</a>
+									</p>
+									<p class="post-source">
+										来自：<a href="#" target="_top">百姓网APP</a>
+									</p>
+								</div>
 							</div>
 						</div>
 					</div>
-					</div>
+				</s:iterator>
+
+
+
 				<div class="waterfall-loader">
 					<div></div>
 					<div></div>
@@ -394,17 +369,16 @@
 			</div>
 		</div>
 	</section>
-	<section>
-	<section class="foot-links-box">
-	
+	<section> <section class="foot-links-box">
+
 	<div id="foot-links">
 		<table>
 			<tbody>
-				
+
 			</tbody>
 		</table>
 	</div>
-	
+
 	</section></section>
 	<div id="hint" class="modal fade">
 		<div class="modal-dialog">
@@ -417,7 +391,8 @@
 					<h4 class="modal-title">提示</h4>
 				</div>
 				<div class="modal-body">
-					<img alt="担保交易提示" src="${ctx }/statics/images/349321fb8d920677ac6feec67dd41363.png"
+					<img alt="担保交易提示"
+						src="${ctx }/statics/images/349321fb8d920677ac6feec67dd41363.png"
 						width="100%">
 				</div>
 				<div class="tip-container">
@@ -475,7 +450,8 @@
 	<div id="sidebar-buttons">
 		<a id="back-to-top" href="#" title="返回顶部"><i class="icon-arrow-up"></i></a>
 		<div class="qrcode-login-dialog in left fade">
-			<img src="${ctx }/statics/images/5f583b56bc0d435f0f67c8e67d0a8a96.png"><img
+			<img
+				src="${ctx }/statics/images/5f583b56bc0d435f0f67c8e67d0a8a96.png"><img
 				src="${ctx }/statics/images/02b008f4f9a924687e129852191867e4.png">
 		</div>
 	</div>
@@ -509,8 +485,8 @@
 									required="required" data-parent=".p-line" value=""
 									placeholder="请尽可能详细地输入您的问题，我们将尽快帮您解决。"
 									style="overflow: hidden; overflow-wrap: break-word; resize: none; width: 400px;"
-									class="input input-5"></textarea><br>
-							<span style="padding-left: 0px;" class="p-error-empty">请填写描述</span></span>
+									class="input input-5"></textarea><br> <span
+								style="padding-left: 0px;" class="p-error-empty">请填写描述</span></span>
 						</div>
 						<div class="p-line">
 							<label class="p-label">手机号：</label><span class="p-value"><input
@@ -550,7 +526,8 @@
 				</div>
 				<div class="modal-body">
 					<p>打开微信，扫一扫右侧二维码，即可完成绑定 --&gt;</p>
-					<img id="promoQrcode" src="${ctx }/statics/images/baixing1.jpg" style="float: right;">
+					<img id="promoQrcode" src="${ctx }/statics/images/baixing1.jpg"
+						style="float: right;">
 					<div class="promoteWeixinContent">
 						<p>绑定后，您可以：</p>
 						<p>1. 立即在手机上收到用户给您的留言</p>
@@ -577,7 +554,9 @@
 					</div>
 				</div>
 				<div class="modal-body">
-					<img src="${ctx }/statics/images/b6ed3ad67a0e69ed4fb6552877b1be1b.png" class="qr-code">
+					<img
+						src="${ctx }/statics/images/b6ed3ad67a0e69ed4fb6552877b1be1b.png"
+						class="qr-code">
 					<div class="tip">下载APP无需登录实时接受私信提醒，联系更便捷！或点击下方先登录再进入私信联系</div>
 				</div>
 				<div class="modal-commit">
@@ -586,6 +565,36 @@
 			</div>
 		</div>
 	</div>
-	
+	<form action="index" id="hiddenForm" method="post">
+		<input type="hidden" id="brand" name="brand"
+			value="<s:property value="#request.brand"/>"> <input
+			type="hidden" id="articlesType" name="articlesType"
+			value="<s:property value="#request.articlesType"/>"> <input
+			type="hidden" id="City" name="City"
+			value="<s:property value="#request.City"/>"> <input
+			type="hidden" id="pageIndex" name="pageIndex"
+			value="<s:property value="#request.Index"/>">
+	</form>
+
+	<script type="text/javascript">
+		function toIndexBybrand(brand) {
+			$("#brand").val(brand);
+			$("#articlesType").val(0);
+			$("#hiddenForm").submit();
+		}
+		function toIndexByarticlesType(articlesType) {
+			$("#articlesType").val(articlesType);
+			$("#hiddenForm").submit();
+		}
+		function toIndexByCity(City) {
+			$("#City").val(City);
+			$("#hiddenForm").submit();
+		}
+		function gotoPage(page) {
+			$("#pageIndex").val(page);
+			$("#hiddenForm").submit();
+		}
+	</script>
+
 </body>
 </html>
