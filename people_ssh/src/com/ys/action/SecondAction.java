@@ -76,10 +76,10 @@ public class SecondAction extends ActionSupport{
 		if(City=="0"){
 			City=null;
 		}
-		if(articlesType==0){
+		if(articlesType==null||articlesType==0){
 			articlesType=null;
 		}
-		if(pageIndex==null){
+		if(pageIndex==null||pageIndex==0){
 			pageIndex=1;
 		}
 		if(brand==null){
@@ -91,7 +91,6 @@ public class SecondAction extends ActionSupport{
 		ActionContext context = ActionContext.getContext();
 		Map<String,Object> map = (Map<String, Object>) context.get("request");
 		if(brand!=null){
-			System.err.println("进来了");
 			List<ArticlesType> articlesTypeList = articlesTypeDao.findByBrand(brand);
 			map.put("articlesTypeList", articlesTypeList);
 		}
