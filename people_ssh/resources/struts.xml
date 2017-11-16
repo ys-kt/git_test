@@ -7,6 +7,6 @@
 	<action name="index" class="com.ys.action.SecondAction" method="Second">
 	<result name="success">jsp/second_hand_market.jsp</result>
 	</action>
-	<!-- 包子e 测试-->
+	<!-- 包子e 测试  旺旺-->
 	</package>
 </struts>
